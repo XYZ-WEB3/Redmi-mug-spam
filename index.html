@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+            text-align: center;
+            background-color: #f1f1f1; /* Цвет фона */
+        }
+
+        #backgroundImage {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        #main {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 80%; /* Ширина контейнера */
+            position: relative;
+            z-index: 1;
+            margin-bottom: 50px; /* Увеличенное расстояние между верхней и нижней частями */
+        }
+
+        h1 {
+            margin-bottom: 20px; /* Увеличенное расстояние */
+        }
+
+        #installButton {
+            background-color: transparent; /* Прозрачный фон */
+            color: white;
+            padding: 15px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 20px; /* Увеличенное расстояние */
+        }
+
+        #installButton:hover {
+            background-color: #4CAF50;
+        }
+
+        #note {
+            margin-top: 20px; /* Увеличенное расстояние */
+            font-size: 14px;
+            color: #333;
+        }
+
+        #notSupported {
+            display: none;
+            margin-top: 20px; /* Увеличенное расстояние */
+            font-size: 14px;
+            color: #333;
+        }
+
+        #telegramLink {
+            margin-top: auto; /* Перемещение вниз (вниз страницы) */
+            margin-bottom: 20px; /* Увеличенное расстояние */
+            font-size: 14px;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            background-color: #3498db;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        #telegramLink:hover {
+            background-color: #2980b9;
+        }
+
+        @media only screen and (max-width: 600px) {
+            /* Стили для мобильных устройств */
+            #backgroundImage {
+                content: url('JP/MB.jpg'); /* Замените ссылку на изображение для мобильной версии */
+            }
+
+            #main {
+                margin: 20px auto;
+            }
+        }
+
+        @media only screen and (min-width: 601px) {
+            /* Стили для настольных устройств */
+            #backgroundImage {
+                content: url('JP/PC.jpg'); /* Замените ссылку на изображение для настольной версии */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <img id="backgroundImage">
+
+    <div id="main">
+
+        <h1>Спам кружками для Xiaomi и Redmi</h1>
+
+        <br>
+        <script type="module" src="https://unpkg.com/esp-web-tools@7.3.1/dist/web/install-button.js?module"></script>
+        <esp-web-install-button id="manifest.json"></esp-web-install-button>
+        <br>
+        <div id="note">
+            ПРИМЕЧАНИЕ: Убедитесь, что закрыты все устройства, использующие порт com (например, монитор последовательного порта)
+        </div>
+    </div>
+    <div id="notSupported">
+        Ваш браузер не поддерживает Web Serial API. Попробуйте Chrome или идите нахуй
+    </div>
+
+    <a id="telegramLink" href="https://t.me/XYZ_web3" target="_blank">Подпишитесь на наш Telegram канал</a>
+</body>
+
+</html>
